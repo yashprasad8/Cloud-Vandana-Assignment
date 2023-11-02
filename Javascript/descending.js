@@ -1,7 +1,19 @@
-const arr = [4, 2, 8, 1, 6, 3, 7];
+const prompt = require ("prompt-sync")();
 
-arr.sort(function(a, b) {
-  return b - a;
-});
+function descendingSort(a, b) {
+    return b - a;
+  }
+  
 
-console.log(arr);
+  const input = prompt("Enter numbers separated by spaces:");
+  const inputArray = input.split(' ').map(Number
+  );
+  
+  if (inputArray.some(isNaN)) {
+    console.log("Invalid input. Please enter numbers separated by spaces.");
+  } else {
+    inputArray.sort(descendingSort);
+  
+    console.log("Sorted Array (Descending Order): " + inputArray.join(', '));
+  }
+  
